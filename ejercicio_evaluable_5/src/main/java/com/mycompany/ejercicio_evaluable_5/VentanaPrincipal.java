@@ -31,42 +31,67 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         jScrollPane_listaLibros = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jPanel3_portada = new javax.swing.JPanel();
         jPanel1_portada = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         estrellas = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jPanel1_info = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
         jPanel4_info = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(2000, 2000));
+        setMinimumSize(new java.awt.Dimension(1000, 800));
+        setPreferredSize(new java.awt.Dimension(1000, 800));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1000, 800));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jButton1.setText("jButton1");
+        jPanel1_Menu.setMaximumSize(new java.awt.Dimension(1000, 50));
+        jPanel1_Menu.setMinimumSize(new java.awt.Dimension(1000, 50));
+        jPanel1_Menu.setName(""); // NOI18N
+        jPanel1_Menu.setPreferredSize(new java.awt.Dimension(1000, 50));
+        jPanel1_Menu.setRequestFocusEnabled(false);
+
+        jButton1.setText("Añadir libro");
         jPanel1_Menu.add(jButton1);
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Modificar libro");
         jPanel1_Menu.add(jButton2);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.2;
-        getContentPane().add(jPanel1_Menu, gridBagConstraints);
-
+        jPanel2.setMinimumSize(new java.awt.Dimension(1000, 750));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel2.setLayout(new java.awt.GridBagLayout());
+
+        jPanel4.setMaximumSize(new java.awt.Dimension(333, 750));
+        jPanel4.setMinimumSize(new java.awt.Dimension(333, 750));
+        jPanel4.setName(""); // NOI18N
+        jPanel4.setPreferredSize(new java.awt.Dimension(333, 750));
+        jPanel4.setRequestFocusEnabled(false);
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1 Item 1 Item 1 Item 1 Item 1 Item 1 Item 1 Item 1 Item 1", "Item 2 Item 2 Item 2 Item 2 Item 2Item 2 Item 2 Item 2 Item 2", "Item 3 Item 3 Item 3 Item 3 Item 3 Item 3 Item 3 Item 3 Item 3 ", "Item 4 Item 4 Item 4Item 4 Item 4 Item 4Item 4Item 4 Item 4", "Item 5 Item 5 Item 5Item 5Item 5 Item 5 Item 5 Item 5 Item 5" };
@@ -78,37 +103,54 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jList1.setPreferredSize(new java.awt.Dimension(343, 200));
         jScrollPane_listaLibros.setViewportView(jList1);
 
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane_listaLibros, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane_listaLibros, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 29;
-        gridBagConstraints.ipady = 128;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 0.3;
-        gridBagConstraints.weighty = 0.9;
-        gridBagConstraints.insets = new java.awt.Insets(121, 62, 59, 0);
-        jPanel2.add(jScrollPane_listaLibros, gridBagConstraints);
+        gridBagConstraints.weighty = 1.0;
+        jPanel2.add(jPanel4, gridBagConstraints);
 
+        jPanel3_portada.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        jPanel3_portada.setMaximumSize(new java.awt.Dimension(333, 750));
+        jPanel3_portada.setMinimumSize(new java.awt.Dimension(333, 750));
+        jPanel3_portada.setPreferredSize(new java.awt.Dimension(333, 750));
         jPanel3_portada.setLayout(new java.awt.GridBagLayout());
 
-        jLabel6.setText("jLabel6");
+        jPanel1_portada.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 1, 10, 1));
+
+        jLabel6.setText("portada");
 
         javax.swing.GroupLayout jPanel1_portadaLayout = new javax.swing.GroupLayout(jPanel1_portada);
         jPanel1_portada.setLayout(jPanel1_portadaLayout);
         jPanel1_portadaLayout.setHorizontalGroup(
             jPanel1_portadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1_portadaLayout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(126, 126, 126))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(111, 111, 111))
         );
         jPanel1_portadaLayout.setVerticalGroup(
             jPanel1_portadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1_portadaLayout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -120,8 +162,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         gridBagConstraints.weighty = 0.4;
         jPanel3_portada.add(jPanel1_portada, gridBagConstraints);
 
-        jLabel5.setText("jLabel5");
-        estrellas.add(jLabel5);
+        estrellas.setLayout(new java.awt.BorderLayout());
+
+        jLabel12.setText("estrellas");
+        estrellas.add(jLabel12, java.awt.BorderLayout.CENTER);
+
+        jLabel13.setText(" ");
+        estrellas.add(jLabel13, java.awt.BorderLayout.PAGE_END);
+
+        jLabel14.setText(" ");
+        estrellas.add(jLabel14, java.awt.BorderLayout.PAGE_START);
+
+        jLabel15.setText(" ");
+        estrellas.add(jLabel15, java.awt.BorderLayout.LINE_START);
+
+        jLabel16.setText(" ");
+        estrellas.add(jLabel16, java.awt.BorderLayout.LINE_END);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -133,29 +189,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1_info.setLayout(new java.awt.GridLayout(4, 2));
 
-        jTextField1.setText("jTextField1");
+        jLabel1.setText("Género");
+        jPanel1_info.add(jLabel1);
+
+        jTextField1.setPreferredSize(new java.awt.Dimension(26, 26));
         jPanel1_info.add(jTextField1);
 
-        jTextField4.setText("jTextField4");
-        jPanel1_info.add(jTextField4);
-
-        jTextField2.setText("jTextField2");
-        jPanel1_info.add(jTextField2);
-
-        jTextField3.setText("jTextField3");
-        jPanel1_info.add(jTextField3);
-
-        jLabel4.setText("jLabel4");
-        jPanel1_info.add(jLabel4);
-
-        jLabel3.setText("jLabel3");
-        jPanel1_info.add(jLabel3);
-
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("Precio");
         jPanel1_info.add(jLabel2);
 
-        jLabel1.setText("jLabel1");
-        jPanel1_info.add(jLabel1);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        jPanel1_info.add(jTextField2);
+
+        jLabel3.setText("Estado");
+        jPanel1_info.add(jLabel3);
+        jPanel1_info.add(jTextField3);
+
+        jLabel4.setText("Comienzo lectura");
+        jPanel1_info.add(jLabel4);
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        jPanel1_info.add(jTextField4);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -169,47 +231,92 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 100;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 0.3;
-        gridBagConstraints.weighty = 0.9;
-        gridBagConstraints.insets = new java.awt.Insets(121, 12, 0, 0);
+        gridBagConstraints.weighty = 1.0;
         jPanel2.add(jPanel3_portada, gridBagConstraints);
 
-        javax.swing.GroupLayout jPanel4_infoLayout = new javax.swing.GroupLayout(jPanel4_info);
-        jPanel4_info.setLayout(jPanel4_infoLayout);
-        jPanel4_infoLayout.setHorizontalGroup(
-            jPanel4_infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel4_infoLayout.setVerticalGroup(
-            jPanel4_infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 268, Short.MAX_VALUE)
-        );
+        jPanel4_info.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jPanel4_info.setMaximumSize(new java.awt.Dimension(333, 750));
+        jPanel4_info.setMinimumSize(new java.awt.Dimension(333, 750));
+        jPanel4_info.setName(""); // NOI18N
+        jPanel4_info.setPreferredSize(new java.awt.Dimension(333, 750));
+        jPanel4_info.setLayout(new java.awt.GridLayout(2, 1));
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 100;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 0.4;
-        gridBagConstraints.weighty = 0.9;
-        gridBagConstraints.insets = new java.awt.Insets(121, 60, 0, 212);
-        jPanel2.add(jPanel4_info, gridBagConstraints);
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        jPanel1.setLayout(new java.awt.GridLayout(3, 2));
+
+        jLabel7.setText("Título");
+        jPanel1.add(jLabel7);
+
+        jTextField5.setName(""); // NOI18N
+        jTextField5.setPreferredSize(new java.awt.Dimension(68, 26));
+        jPanel1.add(jTextField5);
+
+        jLabel8.setText("Autor");
+        jPanel1.add(jLabel8);
+
+        jTextField6.setPreferredSize(new java.awt.Dimension(68, 26));
+        jPanel1.add(jTextField6);
+
+        jPanel4_info.add(jPanel1);
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        jPanel3.setMinimumSize(new java.awt.Dimension(2147483647, 2147483647));
+        jPanel3.setLayout(new java.awt.GridBagLayout());
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setPreferredSize(new java.awt.Dimension(232, 134));
+        jScrollPane1.setViewportView(jTextArea1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.9;
-        getContentPane().add(jPanel2, gridBagConstraints);
+        gridBagConstraints.weighty = 0.8;
+        jPanel3.add(jScrollPane1, gridBagConstraints);
+
+        jLabel9.setText("Sipnosis");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.2;
+        jPanel3.add(jLabel9, gridBagConstraints);
+
+        jPanel4_info.add(jPanel3);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 0.3;
+        gridBagConstraints.weighty = 1.0;
+        jPanel2.add(jPanel4_info, gridBagConstraints);
+
+        jPanel1_Menu.add(jPanel2);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.2;
+        getContentPane().add(jPanel1_Menu, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,22 +358,36 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel1_Menu;
     private javax.swing.JPanel jPanel1_info;
     private javax.swing.JPanel jPanel1_portada;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel3_portada;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel4_info;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane_listaLibros;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

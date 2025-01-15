@@ -6,7 +6,7 @@ package com.mycompany.ejercicio_evaluable_5;
 
 /**
  *
- * @author Usuario
+ * @author Ana
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 

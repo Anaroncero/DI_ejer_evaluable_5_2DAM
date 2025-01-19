@@ -17,13 +17,14 @@ public class Libro {
     private String fechaInicio;
     private String fechaFin;
     private String sinopsis;
+    private String rutaImagen;
 
     // Enum para el estado del libro
     public enum EstadoLibro {
         LEIDO, NO_LEIDO, EN_CURSO, ABANDONADO;
     }
 
-    public Libro(String titulo, String autor, String genero, String editorial, EstadoLibro estado, String fechaInicio, String fechaFin, String sinopsis) {
+    public Libro(String titulo, String autor, String genero, String editorial, EstadoLibro estado, String fechaInicio, String fechaFin, String sinopsis, String rutaImagen) {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
@@ -32,6 +33,7 @@ public class Libro {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.sinopsis = sinopsis;
+        this.rutaImagen = rutaImagen;
     }
 
     public String getTitulo() {
@@ -64,6 +66,14 @@ public class Libro {
 
     public String getSinopsis() {
         return sinopsis;
+    }
+
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
+
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
     }
 
     

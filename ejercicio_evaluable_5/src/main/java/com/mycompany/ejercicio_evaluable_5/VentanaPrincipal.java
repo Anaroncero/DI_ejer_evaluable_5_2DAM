@@ -8,9 +8,13 @@ import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.mycompany.ejercicio_evaluable_5.Libro.EstadoLibro;
 import java.awt.Component;
+import java.awt.Image;
+import java.io.File;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -24,17 +28,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private Biblioteca biblioteca;
     private DefaultListModel<String> modeloLibros;
 
+    private File imageFile;
+
     public VentanaPrincipal() {
         initComponents();
         biblioteca = new Biblioteca();
-        modeloLibros = new DefaultListModel<>(); 
-        jListaBiblioteca.setModel(modeloLibros); 
+        modeloLibros = new DefaultListModel<>();
+        jListaBiblioteca.setModel(modeloLibros);
 
         setLocationRelativeTo(null);
-        
-        
+
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/29809.png"));
         portadaAdd.setIcon(icon);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -66,7 +72,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jListaBiblioteca = new javax.swing.JList<>();
         jPanel3_portada1 = new javax.swing.JPanel();
         jPanel1_portada1 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        portadaLibro = new javax.swing.JLabel();
         jPanel1_info1 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -117,6 +123,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1_portada2 = new javax.swing.JPanel();
         portadaAdd = new javax.swing.JLabel();
+        selectImage = new javax.swing.JPanel();
+        Seleccionar = new javax.swing.JLabel();
+        jTextFieldRuta = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonImagePortadaAdd = new javax.swing.JButton();
         jPanel25 = new javax.swing.JPanel();
         jPanel_Sipnosis2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -394,14 +405,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel3_portada1.setPreferredSize(new java.awt.Dimension(333, 750));
         jPanel3_portada1.setLayout(new java.awt.GridBagLayout());
 
+        jPanel1_portada1.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        jPanel1_portada1.setMaximumSize(new java.awt.Dimension(100, 200));
+        jPanel1_portada1.setMinimumSize(new java.awt.Dimension(100, 200));
+        jPanel1_portada1.setPreferredSize(new java.awt.Dimension(100, 200));
         jPanel1_portada1.setLayout(new java.awt.CardLayout());
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(113, 2, 115));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("portada");
-        jPanel1_portada1.add(jLabel10, "card2");
+        portadaLibro.setBackground(new java.awt.Color(255, 255, 255));
+        portadaLibro.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        portadaLibro.setForeground(new java.awt.Color(113, 2, 115));
+        portadaLibro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        portadaLibro.setMaximumSize(new java.awt.Dimension(150, 200));
+        portadaLibro.setMinimumSize(new java.awt.Dimension(150, 200));
+        portadaLibro.setPreferredSize(new java.awt.Dimension(150, 200));
+        jPanel1_portada1.add(portadaLibro, "card2");
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -829,12 +846,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
+        jPanel1_portada2.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        jPanel1_portada2.setMaximumSize(new java.awt.Dimension(100, 200));
+        jPanel1_portada2.setMinimumSize(new java.awt.Dimension(100, 200));
+        jPanel1_portada2.setPreferredSize(new java.awt.Dimension(100, 200));
         jPanel1_portada2.setLayout(new java.awt.CardLayout());
 
         portadaAdd.setBackground(new java.awt.Color(255, 255, 255));
         portadaAdd.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         portadaAdd.setForeground(new java.awt.Color(113, 2, 115));
         portadaAdd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        portadaAdd.setMaximumSize(new java.awt.Dimension(150, 200));
+        portadaAdd.setMinimumSize(new java.awt.Dimension(150, 200));
+        portadaAdd.setPreferredSize(new java.awt.Dimension(150, 200));
         jPanel1_portada2.add(portadaAdd, "card2");
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -845,6 +869,60 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         gridBagConstraints.weighty = 0.4;
         gridBagConstraints.insets = new java.awt.Insets(0, 40, 0, 40);
         jPanel2.add(jPanel1_portada2, gridBagConstraints);
+
+        selectImage.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 0, 10));
+        selectImage.setLayout(new java.awt.GridBagLayout());
+
+        Seleccionar.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Seleccionar.setForeground(new java.awt.Color(113, 2, 115));
+        Seleccionar.setText("Seleccionar");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.4;
+        selectImage.add(Seleccionar, gridBagConstraints);
+
+        jTextFieldRuta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldRuta.setEnabled(false);
+        jTextFieldRuta.setPreferredSize(new java.awt.Dimension(50, 22));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.4;
+        gridBagConstraints.weighty = 0.2;
+        selectImage.add(jTextFieldRuta, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.4;
+        selectImage.add(jLabel1, gridBagConstraints);
+
+        jButtonImagePortadaAdd.setText("...");
+        jButtonImagePortadaAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonImagePortadaAddActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.2;
+        selectImage.add(jButtonImagePortadaAdd, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.1;
+        jPanel2.add(selectImage, gridBagConstraints);
 
         jPanel25.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 10, 20, 10));
         jPanel25.setLayout(new java.awt.GridBagLayout());
@@ -892,7 +970,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 0.4;
@@ -931,7 +1009,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.5;
-        gridBagConstraints.weighty = 0.2;
+        gridBagConstraints.weighty = 0.1;
         jPanel1.add(jPanel27, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1002,9 +1080,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             return;
         }
 
+        String rutaImagen = this.imageFile != null ? this.imageFile.getAbsolutePath() : null;
+
         //Crear el nuevo libro
-        Libro nuevoLibro = new Libro(titulo, autor, genero, editorial, EstadoLibro.valueOf(estado.toUpperCase()), comienzo, fin, sinopsis);
-        
+        Libro nuevoLibro = new Libro(titulo, autor, genero, editorial, EstadoLibro.valueOf(estado.toUpperCase()), comienzo, fin, sinopsis, rutaImagen);
+
         System.out.println(nuevoLibro.getTitulo() + nuevoLibro.getEstado() + nuevoLibro.getGenero() + nuevoLibro.getEditorial() + nuevoLibro.getEstado());
 
         // Agregarlo a la biblioteca
@@ -1012,7 +1092,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         //Agregar el libro al JList como String
         String libroString = nuevoLibro.getTitulo() + " - " + nuevoLibro.getAutor();
-        modeloLibros.addElement(libroString); 
+        modeloLibros.addElement(libroString);
 
         //ACTUALIZAR CONTADOR
         int contadorLibros = biblioteca.getContador();
@@ -1034,6 +1114,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jTextFieldComienzo.setText("");
         jTextAreaSinopsis.setText("");
         jTextFieldFin.setText("");
+        jTextFieldRuta.setText("");
+
+  
+        //Imagen predeterminada
+        ImageIcon imagenPredeterminada = new ImageIcon(getClass().getResource("/images/29809.png"));
+        portadaAdd.setIcon(imagenPredeterminada);
+        this.imageFile = null;
 
 
     }//GEN-LAST:event_jButtonAddActionPerformed
@@ -1072,6 +1159,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     jTextFieldBiblioComienzo.setText(libroEncontrado.getFechaInicio());
                     jTextAreaBiblioSinopsis.setText(libroEncontrado.getSinopsis());
                     jTextFieldBiblioFin.setText(libroEncontrado.getFechaFin());
+
+                    // Mostrar la imagen del libro
+                    String rutaPortada = libroEncontrado.getRutaImagen();
+                    if (rutaPortada != null && !rutaPortada.isEmpty()) {
+                        mostrarPortada(rutaPortada);
+                    }
                 } else {
                     JOptionPane.showMessageDialog(this, "Libro no encontrado.");
                 }
@@ -1161,7 +1254,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 //Deshabilitar el botón de guardar
                 jButtonGuardar.setEnabled(false);
 
-                JOptionPane.showMessageDialog(this, "El libro." + jTextFieldBiblioTitulo.getText()+ " ha sido actualizado");
+                JOptionPane.showMessageDialog(this, "El libro." + jTextFieldBiblioTitulo.getText() + " ha sido actualizado");
             } else {
                 // Si no se encuentra el libro
                 JOptionPane.showMessageDialog(this, "No se pudo encontrar el libro.");
@@ -1174,59 +1267,62 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //Comprobamos que el libro esta seleccionado
         String seleccionado = jListaBiblioteca.getSelectedValue();
         if (seleccionado != null) {
-        //Extraer el título y autor del libro seleccionado
-        String[] partes = seleccionado.split(" - ");
-        String tituloSeleccionado = partes[0].trim();
-        String autorSeleccionado = partes[1].trim();
+            //Extraer el título y autor del libro seleccionado
+            String[] partes = seleccionado.split(" - ");
+            String tituloSeleccionado = partes[0].trim();
+            String autorSeleccionado = partes[1].trim();
 
-        //Buscar el libro en la biblioteca
-        Libro libroEncontrado = biblioteca.buscarLibro(tituloSeleccionado, autorSeleccionado);
+            //Buscar el libro en la biblioteca
+            Libro libroEncontrado = biblioteca.buscarLibro(tituloSeleccionado, autorSeleccionado);
 
-        if (libroEncontrado != null) {
-            //Eliminar el libro guardado en Biblioteca
-            boolean eliminado = biblioteca.eliminarLibro(libroEncontrado);
-            if (eliminado) {
-                // Eliminar el libro de la lista (JList)
-                DefaultListModel<String> modeloLibros = (DefaultListModel<String>) jListaBiblioteca.getModel();
-                modeloLibros.removeElement(seleccionado); // Eliminar el libro de la lista de la interfaz
-                
-                
-                JOptionPane.showMessageDialog(this, "Libro eliminado exitosamente.");
-                
-                //Limpiar
-                jTextFieldBiblioTitulo.setText("");
-                jTextFieldBiblioAutor.setText("");
-                jTextFieldBiblioGenero.setText("");
-                jTextFieldBiblioEditorial.setText("");
-                jComboBoxBiblioEstado.setSelectedIndex(0);
-                jTextFieldBiblioComienzo.setText("");
-                jTextAreaBiblioSinopsis.setText("");
-                jTextFieldBiblioFin.setText("");
-                
-                // Deshabilitar los campos y el botón de guardar después de eliminar
-                jTextFieldBiblioTitulo.setEnabled(false);
-                jTextFieldBiblioAutor.setEnabled(false);
-                jTextFieldBiblioGenero.setEnabled(false);
-                jTextFieldBiblioEditorial.setEnabled(false);
-                jComboBoxBiblioEstado.setEnabled(false);
-                jTextFieldBiblioComienzo.setEnabled(false);
-                jTextAreaBiblioSinopsis.setEnabled(false);
-                jTextFieldBiblioFin.setEnabled(false);
-                jButtonGuardar.setEnabled(false);
-            } else { 
-                JOptionPane.showMessageDialog(this, "No se pudo eliminar el libro.");
+            if (libroEncontrado != null) {
+                //Eliminar el libro guardado en Biblioteca
+                boolean eliminado = biblioteca.eliminarLibro(libroEncontrado);
+                if (eliminado) {
+                    // Eliminar el libro de la lista (JList)
+                    DefaultListModel<String> modeloLibros = (DefaultListModel<String>) jListaBiblioteca.getModel();
+                    modeloLibros.removeElement(seleccionado); // Eliminar el libro de la lista de la interfaz
+
+                    JOptionPane.showMessageDialog(this, "Libro eliminado exitosamente.");
+
+                    //Limpiar
+                    jTextFieldBiblioTitulo.setText("");
+                    jTextFieldBiblioAutor.setText("");
+                    jTextFieldBiblioGenero.setText("");
+                    jTextFieldBiblioEditorial.setText("");
+                    jComboBoxBiblioEstado.setSelectedIndex(0);
+                    jTextFieldBiblioComienzo.setText("");
+                    jTextAreaBiblioSinopsis.setText("");
+                    jTextFieldBiblioFin.setText("");
+
+                    // Deshabilitar los campos y el botón de guardar después de eliminar
+                    jTextFieldBiblioTitulo.setEnabled(false);
+                    jTextFieldBiblioAutor.setEnabled(false);
+                    jTextFieldBiblioGenero.setEnabled(false);
+                    jTextFieldBiblioEditorial.setEnabled(false);
+                    jComboBoxBiblioEstado.setEnabled(false);
+                    jTextFieldBiblioComienzo.setEnabled(false);
+                    jTextAreaBiblioSinopsis.setEnabled(false);
+                    jTextFieldBiblioFin.setEnabled(false);
+                    jButtonGuardar.setEnabled(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No se pudo eliminar el libro.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Libro no encontrado.");
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Libro no encontrado.");
+            JOptionPane.showMessageDialog(this, "Por favor, seleccione un libro que desee eliminar.");
         }
-    } else {
-        JOptionPane.showMessageDialog(this, "Por favor, seleccione un libro que desee eliminar.");
-    }
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jComboBoxBiblioEstadoComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jComboBoxBiblioEstadoComponentAdded
 
     }//GEN-LAST:event_jComboBoxBiblioEstadoComponentAdded
+
+    private void jButtonImagePortadaAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImagePortadaAddActionPerformed
+        abrirImagen();
+    }//GEN-LAST:event_jButtonImagePortadaAddActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1251,6 +1347,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Seleccionar;
     private javax.swing.JLabel espacio;
     private javax.swing.JPanel espacio1;
     private javax.swing.JPanel espacio2;
@@ -1265,10 +1362,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButtonImagePortadaAdd;
     private javax.swing.JComboBox<String> jComboBoxBiblioEstado;
     private javax.swing.JComboBox<String> jComboBoxEstado;
     private javax.swing.JDialog jDialog1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1333,7 +1431,85 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldEditorial;
     private javax.swing.JTextField jTextFieldFin;
     private javax.swing.JTextField jTextFieldGenero;
+    private javax.swing.JTextField jTextFieldRuta;
     private javax.swing.JTextField jTextFieldTitulo;
     private javax.swing.JLabel portadaAdd;
+    private javax.swing.JLabel portadaLibro;
+    private javax.swing.JPanel selectImage;
     // End of variables declaration//GEN-END:variables
+
+    //metodo para cambiar la imagen y que se redimensione al tamaño del (jlabel)
+    private void cambiarImage(String path) {
+        ImageIcon image = new ImageIcon(path);
+        Image img = image.getImage();
+
+        //Obtenemos tamaño del jlabel
+        int labelWidth = portadaAdd.getWidth();
+        int labelHeight = portadaAdd.getHeight();
+
+        //Calculamos la relacion de aspecto de la imagen origianl
+        double aspectRatio = (double) img.getWidth(null) / img.getHeight(null);
+
+        //Nuevas dimensiones de la imagen
+        int nuevaAnchura = labelWidth;
+        int nuevaAltura = (int) (labelWidth / aspectRatio);
+
+        // Si la altura ajustada es mayor que la altura del JLabel ajustamos la altura
+        if (nuevaAltura > labelHeight) {
+            nuevaAltura = labelHeight;
+            nuevaAnchura = (int) (labelHeight * aspectRatio);
+        }
+
+        // Escalar la imagen
+        Image newImg = img.getScaledInstance(nuevaAnchura, nuevaAltura, Image.SCALE_SMOOTH);
+
+        // Establecer la imagen escalada al JLabel
+        Icon ic = new ImageIcon(newImg);
+        portadaAdd.setIcon(ic);
+
+        // Actualizar imagen
+        this.repaint();
+    }
+
+    //abrir panel seleccionar iamgen
+    private void abrirImagen() {
+        JFileChooser img = new JFileChooser();
+        if (img.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            this.imageFile = img.getSelectedFile();
+            cambiarImage(img.getSelectedFile().getPath());
+            jTextFieldRuta.setText(img.getSelectedFile().getPath());
+        }
+    }
+
+    private void mostrarPortada(String rutaPortada) {
+        ImageIcon imageIcon = new ImageIcon(rutaPortada);
+        Image img = imageIcon.getImage();
+
+        // Obtener el tamaño del JLabel para la portada
+        int labelWidth = portadaLibro.getWidth();
+        int labelHeight = portadaLibro.getHeight();
+
+        // Calcular la relación de aspecto de la imagen original
+        double aspectRatio = (double) img.getWidth(null) / img.getHeight(null);
+
+        // Nuevas dimensiones de la imagen
+        int newWidth = labelWidth;
+        int newHeight = (int) (labelWidth / aspectRatio);  // Mantener la proporción
+
+        // Si la altura ajustada es mayor que la altura del JLabel, ajustar la altura
+        if (newHeight > labelHeight) {
+            newHeight = labelHeight;
+            newWidth = (int) (labelHeight * aspectRatio);  // Mantener la proporción
+        }
+
+        // Escalar la imagen
+        Image newImg = img.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+
+        // Establecer la imagen escalada al JLabel
+        Icon icon = new ImageIcon(newImg);
+        portadaLibro.setIcon(icon);
+
+        // Repintar el panel si es necesario
+        this.repaint();
+    }
 }

@@ -4,12 +4,16 @@
  */
 package com.mycompany.ejercicio_evaluable_5;
 
+import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 import com.mycompany.ejercicio_evaluable_5.Libro.EstadoLibro;
 import java.awt.Component;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -26,6 +30,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         modeloLibros = new DefaultListModel<>(); 
         jListaBiblioteca.setModel(modeloLibros); 
 
+        setLocationRelativeTo(null);
+        
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/29809.png"));
+        portadaAdd.setIcon(icon);
     }
 
     @SuppressWarnings("unchecked")
@@ -107,7 +116,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jTextFieldFin = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel1_portada2 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
+        portadaAdd = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
         jPanel_Sipnosis2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -132,20 +141,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1200, 800));
-        setPreferredSize(new java.awt.Dimension(1200, 800));
+        setMinimumSize(new java.awt.Dimension(1200, 820));
+        setPreferredSize(new java.awt.Dimension(1200, 820));
         setResizable(false);
-        setSize(new java.awt.Dimension(1200, 800));
+        setSize(new java.awt.Dimension(1200, 820));
 
         jPanel6.setBackground(new java.awt.Color(13, 13, 13));
         jPanel6.setLayout(new java.awt.BorderLayout());
 
         jTabbedPane1.setBackground(new java.awt.Color(166, 86, 160));
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
         jPanel_Inicio.setBackground(new java.awt.Color(166, 86, 160));
-        jPanel_Inicio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(113, 2, 115), 2, true));
-        jPanel_Inicio.setForeground(new java.awt.Color(245, 245, 220));
+        jPanel_Inicio.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jPanel_Inicio.setForeground(new java.awt.Color(166, 86, 160));
+        jPanel_Inicio.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jPanel_Inicio.setMinimumSize(new java.awt.Dimension(1000, 750));
         jPanel_Inicio.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel_Inicio.setLayout(new java.awt.GridLayout(3, 3));
@@ -156,11 +167,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         espacio1.setLayout(espacio1Layout);
         espacio1Layout.setHorizontalGroup(
             espacio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 402, Short.MAX_VALUE)
         );
         espacio1Layout.setVerticalGroup(
             espacio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 248, Short.MAX_VALUE)
+            .addGap(0, 249, Short.MAX_VALUE)
         );
 
         jPanel_Inicio.add(espacio1);
@@ -179,11 +190,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         espacio3.setLayout(espacio3Layout);
         espacio3Layout.setHorizontalGroup(
             espacio3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 402, Short.MAX_VALUE)
         );
         espacio3Layout.setVerticalGroup(
             espacio3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 248, Short.MAX_VALUE)
+            .addGap(0, 249, Short.MAX_VALUE)
         );
 
         jPanel_Inicio.add(espacio3);
@@ -199,7 +210,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         espacio4.setLayout(espacio4Layout);
         espacio4Layout.setHorizontalGroup(
             espacio4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 402, Short.MAX_VALUE)
         );
         espacio4Layout.setVerticalGroup(
             espacio4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,11 +262,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         espacio5.setLayout(espacio5Layout);
         espacio5Layout.setHorizontalGroup(
             espacio5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 402, Short.MAX_VALUE)
         );
         espacio5Layout.setVerticalGroup(
             espacio5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 248, Short.MAX_VALUE)
+            .addGap(0, 249, Short.MAX_VALUE)
         );
 
         jPanel_Inicio.add(espacio5);
@@ -270,7 +281,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         espacio6.setLayout(espacio6Layout);
         espacio6Layout.setHorizontalGroup(
             espacio6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 402, Short.MAX_VALUE)
         );
         espacio6Layout.setVerticalGroup(
             espacio6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,11 +296,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         espacio7.setLayout(espacio7Layout);
         espacio7Layout.setHorizontalGroup(
             espacio7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 402, Short.MAX_VALUE)
         );
         espacio7Layout.setVerticalGroup(
             espacio7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 248, Short.MAX_VALUE)
+            .addGap(0, 249, Short.MAX_VALUE)
         );
 
         jPanel_Inicio.add(espacio7);
@@ -300,20 +311,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         espacio8.setLayout(espacio8Layout);
         espacio8Layout.setHorizontalGroup(
             espacio8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 402, Short.MAX_VALUE)
         );
         espacio8Layout.setVerticalGroup(
             espacio8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 248, Short.MAX_VALUE)
+            .addGap(0, 249, Short.MAX_VALUE)
         );
 
         jPanel_Inicio.add(espacio8);
 
-        jTabbedPane1.addTab("Inicio", jPanel_Inicio);
+        jTabbedPane1.addTab("", new javax.swing.ImageIcon(getClass().getResource("/images/house.png")), jPanel_Inicio); // NOI18N
 
         jPanel2_Biblioteca.setBackground(new java.awt.Color(166, 86, 160));
-        jPanel2_Biblioteca.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(113, 2, 115), 2, true));
-        jPanel2_Biblioteca.setForeground(new java.awt.Color(245, 245, 220));
+        jPanel2_Biblioteca.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jPanel2_Biblioteca.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2_Biblioteca.setMinimumSize(new java.awt.Dimension(1000, 750));
         jPanel2_Biblioteca.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel2_Biblioteca.setLayout(new java.awt.GridBagLayout());
@@ -360,11 +371,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel_lista1.setLayout(jPanel_lista1Layout);
         jPanel_lista1Layout.setHorizontalGroup(
             jPanel_lista1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane_listaLibros1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
+            .addComponent(jScrollPane_listaLibros1, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
         );
         jPanel_lista1Layout.setVerticalGroup(
             jPanel_lista1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane_listaLibros1, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
+            .addComponent(jScrollPane_listaLibros1, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -472,7 +483,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel10.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 10, 20, 10));
         jPanel10.setLayout(new java.awt.GridLayout(7, 1, 10, 10));
 
-        jTextFieldBiblioTitulo.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldBiblioTitulo.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jTextFieldBiblioTitulo.setForeground(new java.awt.Color(255, 102, 255));
         jTextFieldBiblioTitulo.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextFieldBiblioTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -481,14 +493,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jPanel10.add(jTextFieldBiblioTitulo);
 
-        jTextFieldBiblioAutor.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldBiblioAutor.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jTextFieldBiblioAutor.setForeground(new java.awt.Color(255, 102, 255));
         jTextFieldBiblioAutor.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jPanel10.add(jTextFieldBiblioAutor);
 
-        jTextFieldBiblioGenero.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldBiblioGenero.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jTextFieldBiblioGenero.setForeground(new java.awt.Color(255, 102, 255));
         jPanel10.add(jTextFieldBiblioGenero);
 
-        jTextFieldBiblioEditorial.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldBiblioEditorial.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jTextFieldBiblioEditorial.setForeground(new java.awt.Color(255, 102, 255));
         jTextFieldBiblioEditorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldBiblioEditorialActionPerformed(evt);
@@ -509,7 +524,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jPanel10.add(jComboBoxBiblioEstado);
 
-        jTextFieldBiblioComienzo.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldBiblioComienzo.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jTextFieldBiblioComienzo.setForeground(new java.awt.Color(255, 102, 255));
         jTextFieldBiblioComienzo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldBiblioComienzoActionPerformed(evt);
@@ -517,7 +533,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jPanel10.add(jTextFieldBiblioComienzo);
 
-        jTextFieldBiblioFin.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldBiblioFin.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jTextFieldBiblioFin.setForeground(new java.awt.Color(255, 102, 255));
         jTextFieldBiblioFin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldBiblioFinActionPerformed(evt);
@@ -564,7 +581,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel_Sipnosis1.setLayout(new java.awt.GridBagLayout());
 
         jTextAreaBiblioSinopsis.setColumns(10);
-        jTextAreaBiblioSinopsis.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextAreaBiblioSinopsis.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jTextAreaBiblioSinopsis.setForeground(new java.awt.Color(255, 102, 255));
         jTextAreaBiblioSinopsis.setLineWrap(true);
         jTextAreaBiblioSinopsis.setRows(5);
         jTextAreaBiblioSinopsis.setWrapStyleWord(true);
@@ -645,11 +663,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         jPanel2_Biblioteca.add(jPanel4, gridBagConstraints);
 
-        jTabbedPane1.addTab("Biblioteca", jPanel2_Biblioteca);
+        jTabbedPane1.addTab("Biblioteca", new javax.swing.ImageIcon(getClass().getResource("/images/library.png")), jPanel2_Biblioteca); // NOI18N
 
         jPanel2_Add.setBackground(new java.awt.Color(166, 86, 160));
-        jPanel2_Add.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(113, 2, 115), 2, true));
-        jPanel2_Add.setForeground(new java.awt.Color(245, 245, 220));
+        jPanel2_Add.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jPanel2_Add.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2_Add.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jPanel2_Add.setMinimumSize(new java.awt.Dimension(1000, 750));
         jPanel2_Add.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel2_Add.setLayout(new java.awt.GridBagLayout());
@@ -752,18 +771,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel14.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 10, 20, 10));
         jPanel14.setLayout(new java.awt.GridLayout(7, 1, 30, 30));
 
-        jTextFieldTitulo.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldTitulo.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jTextFieldTitulo.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jPanel14.add(jTextFieldTitulo);
 
-        jTextFieldAutor.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldAutor.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jTextFieldAutor.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jPanel14.add(jTextFieldAutor);
 
-        jTextFieldGenero.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldGenero.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jPanel14.add(jTextFieldGenero);
 
-        jTextFieldEditorial.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldEditorial.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jTextFieldEditorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEditorialActionPerformed(evt);
@@ -774,7 +793,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LEIDO", "NO_LEIDO", "EN_CURSO", "ABANDONADO" }));
         jPanel14.add(jComboBoxEstado);
 
-        jTextFieldComienzo.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldComienzo.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jTextFieldComienzo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldComienzoActionPerformed(evt);
@@ -782,7 +801,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jPanel14.add(jTextFieldComienzo);
 
-        jTextFieldFin.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextFieldFin.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jTextFieldFin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFinActionPerformed(evt);
@@ -812,12 +831,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1_portada2.setLayout(new java.awt.CardLayout());
 
-        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel17.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(113, 2, 115));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("portada");
-        jPanel1_portada2.add(jLabel17, "card2");
+        portadaAdd.setBackground(new java.awt.Color(255, 255, 255));
+        portadaAdd.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        portadaAdd.setForeground(new java.awt.Color(113, 2, 115));
+        portadaAdd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1_portada2.add(portadaAdd, "card2");
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -836,7 +854,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel_Sipnosis2.setLayout(new java.awt.GridBagLayout());
 
         jTextAreaSinopsis.setColumns(10);
-        jTextAreaSinopsis.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jTextAreaSinopsis.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jTextAreaSinopsis.setLineWrap(true);
         jTextAreaSinopsis.setRows(5);
         jTextAreaSinopsis.setWrapStyleWord(true);
@@ -925,7 +943,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(40, 40, 40, 40);
         jPanel2_Add.add(jPanel1, gridBagConstraints);
 
-        jTabbedPane1.addTab("Añadir ", jPanel2_Add);
+        jTabbedPane1.addTab("Añadir ", new javax.swing.ImageIcon(getClass().getResource("/images/book-plus.png")), jPanel2_Add); // NOI18N
 
         jPanel6.add(jTabbedPane1, java.awt.BorderLayout.PAGE_START);
 
@@ -996,7 +1014,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         String libroString = nuevoLibro.getTitulo() + " - " + nuevoLibro.getAutor();
         modeloLibros.addElement(libroString); 
 
-        //Actualizar contador de libros en biblioteca
+        //ACTUALIZAR CONTADOR
         int contadorLibros = biblioteca.getContador();
         jLabelNumLibros.setText(contadorLibros + "");
 
@@ -1217,28 +1235,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+            UIManager.setLookAndFeel(new FlatLightLaf()); //Clase UI que dentro tiene un LookAndFeel y importamos la clase FlatDarkLaf
 
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (Exception e) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, e);
         }
         //</editor-fold>
 
@@ -1270,7 +1270,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -1335,5 +1334,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldFin;
     private javax.swing.JTextField jTextFieldGenero;
     private javax.swing.JTextField jTextFieldTitulo;
+    private javax.swing.JLabel portadaAdd;
     // End of variables declaration//GEN-END:variables
 }

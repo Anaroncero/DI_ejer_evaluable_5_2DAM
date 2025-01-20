@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Usuario
+ * @author Ana
  */
 public class VentanaPrincipalTest {
     
@@ -36,16 +36,6 @@ public class VentanaPrincipalTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of main method, of class VentanaPrincipal.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        VentanaPrincipal.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
     
 }

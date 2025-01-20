@@ -1461,27 +1461,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Image img = image.getImage();
 
         //Obtenemos tamaño del jlabel
-        int labelWidth = portadaAdd.getWidth();
-        int labelHeight = portadaAdd.getHeight();
+        int labelAnchura = portadaAdd.getWidth();
+        int labelAltura = portadaAdd.getHeight();
 
         //Calculamos la relacion de aspecto de la imagen origianl
         double aspectRatio = (double) img.getWidth(null) / img.getHeight(null);
 
         //Nuevas dimensiones de la imagen
-        int nuevaAnchura = labelWidth;
-        int nuevaAltura = (int) (labelWidth / aspectRatio);
+        int nuevaAnchura = labelAnchura;
+        int nuevaAltura = (int) (labelAnchura / aspectRatio);
 
         // Si la altura ajustada es mayor que la altura del JLabel ajustamos la altura
-        if (nuevaAltura > labelHeight) {
-            nuevaAltura = labelHeight;
-            nuevaAnchura = (int) (labelHeight * aspectRatio);
+        if (nuevaAltura > labelAltura) {
+            nuevaAltura = labelAltura;
+            nuevaAnchura = (int) (labelAltura * aspectRatio);
         }
 
         // Escalar la imagen
-        Image newImg = img.getScaledInstance(nuevaAnchura, nuevaAltura, Image.SCALE_SMOOTH);
+        Image nuevaImagen = img.getScaledInstance(nuevaAnchura, nuevaAltura, Image.SCALE_SMOOTH);
 
         // Establecer la imagen escalada al JLabel
-        Icon ic = new ImageIcon(newImg);
+        Icon ic = new ImageIcon(nuevaImagen);
         portadaAdd.setIcon(ic);
 
         // Actualizar imagen
@@ -1511,27 +1511,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Image img = imageIcon.getImage();
 
         // Obtener el tamaño del JLabel para la portada
-        int labelWidth = portadaLibro.getWidth();
-        int labelHeight = portadaLibro.getHeight();
+        int labelAnchura = portadaLibro.getWidth();
+        int labelAltura = portadaLibro.getHeight();
 
         // Calcular la relación de aspecto de la imagen original
         double aspectRatio = (double) img.getWidth(null) / img.getHeight(null);
 
         // Nuevas dimensiones de la imagen
-        int newWidth = labelWidth;
-        int newHeight = (int) (labelWidth / aspectRatio);  // Mantener la proporción
+        int nuevaAnchura = labelAnchura;
+        int nuevaAltura = (int) (labelAnchura / aspectRatio);  
 
         // Si la altura ajustada es mayor que la altura del JLabel, ajustar la altura
-        if (newHeight > labelHeight) {
-            newHeight = labelHeight;
-            newWidth = (int) (labelHeight * aspectRatio);  // Mantener la proporción
+        if (nuevaAltura > labelAltura) {
+            nuevaAltura = labelAltura;
+            nuevaAnchura = (int) (labelAltura * aspectRatio);  
         }
 
         // Escalar la imagen
-        Image newImg = img.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+        Image nuevaImagen = img.getScaledInstance(nuevaAnchura, nuevaAltura, Image.SCALE_SMOOTH);
 
         // Establecer la imagen escalada al JLabel
-        Icon icon = new ImageIcon(newImg);
+        Icon icon = new ImageIcon(nuevaImagen);
         portadaLibro.setIcon(icon);
 
         // Repintar el panel si es necesario

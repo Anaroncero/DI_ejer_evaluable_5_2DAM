@@ -1082,8 +1082,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             return;
         }
 
-        // Asignar la ruta de la imagen seleccionada, o null si el usuario no añade una imagen
-        String rutaImagen = this.imageFile != null ? this.imageFile.getAbsolutePath() : "E:\\GitHub\\2-DAM\\MODULOS\\Desarrollo de interfaces\\Segundo Trimestre\\evaluable_5\\ID_ejercicio_evaluable_5\\ejercicio_evaluable_5\\src\\main\\resources\\images\\book-heart.png";
+        //Si el usuario añade una imagen se ponga la imagen y si no pone imagen que el valor se ponga nulo
+        //Más adelante en el código modificare y pondre que el valor si es nulo se ponga la imagen predeterminada
+        String rutaImagen = this.imageFile != null ? this.imageFile.getAbsolutePath() : null;
 
         //Crear el nuevo libro
         Libro nuevoLibro = new Libro(titulo, autor, genero, editorial, EstadoLibro.valueOf(estado.toUpperCase()), comienzo, fin, sinopsis, rutaImagen);
@@ -1168,11 +1169,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     String rutaPortada = libroEncontrado.getRutaImagen();
                     if (rutaPortada != null) {
                         mostrarPortada(rutaPortada);
-                    } 
+                    }else{ //Si el valor es nulo (no ha puesto imagen el usuario) se ponga esta predeterminada
+                        ImageIcon imagenPredeterminada = new ImageIcon(getClass().getResource("/images/book-heart.png"));
+                        portadaLibro.setIcon(imagenPredeterminada);
+                    }
                 } else {
                     JOptionPane.showMessageDialog(this, "Libro no encontrado.");
                 }
-                
 
             }
         }
@@ -1200,7 +1203,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         String seleccionado = jListaBiblioteca.getSelectedValue();
 
         if (seleccionado != null) {
-            //Habilitar para poder editarlo
             jTextFieldBiblioTitulo.setEnabled(true);
             jTextFieldBiblioAutor.setEnabled(true);
             jTextFieldBiblioGenero.setEnabled(true);
@@ -1210,7 +1212,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             jTextAreaBiblioSinopsis.setEnabled(true);
             jTextFieldBiblioFin.setEnabled(true);
 
-            //Habilitar el botón"Guardar para poder guardar una vez se edite
+            //Habilitar el botón Guardar para poder guardar una vez se edite
             jButtonGuardar.setEnabled(true);
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, elija un libro que quiera editar.");
@@ -1224,7 +1226,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         String seleccionado = jListaBiblioteca.getSelectedValue();
 
         if (seleccionado != null) {
-            //coger el título y el autor del libro seleccionado
+            //coger el título y el autor del libro seleccionado para mostrarlo en la lista
             String[] partes = seleccionado.split(" - ");
             String tituloSeleccionado = partes[0].trim();
             String autorSeleccionado = partes[1].trim();
@@ -1519,12 +1521,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         // Nuevas dimensiones de la imagen
         int nuevaAnchura = labelAnchura;
-        int nuevaAltura = (int) (labelAnchura / aspectRatio);  
+        int nuevaAltura = (int) (labelAnchura / aspectRatio);
 
         // Si la altura ajustada es mayor que la altura del JLabel, ajustar la altura
         if (nuevaAltura > labelAltura) {
             nuevaAltura = labelAltura;
-            nuevaAnchura = (int) (labelAltura * aspectRatio);  
+            nuevaAnchura = (int) (labelAltura * aspectRatio);
         }
 
         // Escalar la imagen

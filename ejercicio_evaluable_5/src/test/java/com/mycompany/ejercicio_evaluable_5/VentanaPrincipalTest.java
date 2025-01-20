@@ -35,7 +35,5 @@ public class VentanaPrincipalTest {
     @After
     public void tearDown() {
     }
-
-    
-    
+     
 }

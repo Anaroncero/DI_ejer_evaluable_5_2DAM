@@ -41,6 +41,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/29809.png"));
         portadaAdd.setIcon(icon);
 
+        ImageIcon sinPortadaImage = new ImageIcon(getClass().getResource("/images/book-heart.png"));
+        portadaLibro.setIcon(sinPortadaImage);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -1079,12 +1082,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             return;
         }
 
-        String rutaImagen = this.imageFile != null ? this.imageFile.getAbsolutePath() : null;
+        // Asignar la ruta de la imagen seleccionada, o null si el usuario no añade una imagen
+        String rutaImagen = this.imageFile != null ? this.imageFile.getAbsolutePath() : "E:\\GitHub\\2-DAM\\MODULOS\\Desarrollo de interfaces\\Segundo Trimestre\\evaluable_5\\ID_ejercicio_evaluable_5\\ejercicio_evaluable_5\\src\\main\\resources\\images\\book-heart.png";
 
         //Crear el nuevo libro
         Libro nuevoLibro = new Libro(titulo, autor, genero, editorial, EstadoLibro.valueOf(estado.toUpperCase()), comienzo, fin, sinopsis, rutaImagen);
 
-        System.out.println(nuevoLibro.getTitulo() + nuevoLibro.getEstado() + nuevoLibro.getGenero() + nuevoLibro.getEditorial() + nuevoLibro.getEstado());
+        //prueba
+        System.out.println(nuevoLibro.getRutaImagen());
 
         // Agregarlo a la biblioteca
         biblioteca.agregarLibro(nuevoLibro);
@@ -1118,6 +1123,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //Imagen predeterminada
         ImageIcon imagenPredeterminada = new ImageIcon(getClass().getResource("/images/29809.png"));
         portadaAdd.setIcon(imagenPredeterminada);
+
         this.imageFile = null;
 
 
@@ -1158,14 +1164,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     jTextAreaBiblioSinopsis.setText(libroEncontrado.getSinopsis());
                     jTextFieldBiblioFin.setText(libroEncontrado.getFechaFin());
 
-                    // Mostrar la imagen del libro
+                    //Mostrar la imagen del libro la portada
                     String rutaPortada = libroEncontrado.getRutaImagen();
-                    if (rutaPortada != null && !rutaPortada.isEmpty()) {
+                    if (rutaPortada != null) {
                         mostrarPortada(rutaPortada);
-                    }
+                    } 
                 } else {
                     JOptionPane.showMessageDialog(this, "Libro no encontrado.");
                 }
+                
+
             }
         }
 
@@ -1480,7 +1488,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.repaint();
     }
 
-    //abrir panel seleccionar iamgen
+    //Panel para seleccionar imagen en añadir libro
     private void abrirImagen() {
         JFileChooser img = new JFileChooser();
         if (img.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
@@ -1490,8 +1498,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }
 
+    //muestra la portada en biblioteca
     private void mostrarPortada(String rutaPortada) {
         ImageIcon imageIcon = new ImageIcon(rutaPortada);
+        System.out.println(rutaPortada);
+        // Verificar si la imagen se ha cargado
+        if (imageIcon.getIconWidth() == -1) {
+            System.err.println("Error: No se pudo cargar la imagen en la ruta: " + rutaPortada);
+            return; // Salir si no se pudo cargar la imagen
+        }
+
         Image img = imageIcon.getImage();
 
         // Obtener el tamaño del JLabel para la portada

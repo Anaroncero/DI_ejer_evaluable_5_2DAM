@@ -29,6 +29,7 @@ public class Biblioteca {
     public boolean eliminarLibro(int indice) {
         if(indice >= 0 && indice < libros.size()){
         libros.remove(indice);
+        contador--; // Actualizamos el contador
         return true;
         }
         return false;

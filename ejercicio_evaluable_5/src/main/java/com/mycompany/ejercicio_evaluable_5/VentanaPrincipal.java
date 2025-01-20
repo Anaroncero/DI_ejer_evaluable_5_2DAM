@@ -153,7 +153,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 820));
-        setPreferredSize(new java.awt.Dimension(1200, 820));
         setResizable(false);
         setSize(new java.awt.Dimension(1200, 820));
 
@@ -616,7 +615,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel26.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(113, 2, 115));
-        jLabel26.setText("Sipnosis");
+        jLabel26.setText("Sinopsis");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -949,7 +948,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel28.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(113, 2, 115));
-        jLabel28.setText("Sipnosis");
+        jLabel28.setText("Sinopsis");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -1065,7 +1064,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
 
         //coger lo introducido en jtextfield y jcombobox
-        String titulo = jTextFieldTitulo.getText();
+        String titulo = jTextFieldTitulo.getText().toUpperCase(); //para que el titulo se guarde en mayuscula
         String autor = jTextFieldAutor.getText();
         String genero = jTextFieldGenero.getText();
         String editorial = jTextFieldEditorial.getText();
@@ -1116,7 +1115,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jTextFieldFin.setText("");
         jTextFieldRuta.setText("");
 
-  
         //Imagen predeterminada
         ImageIcon imagenPredeterminada = new ImageIcon(getClass().getResource("/images/29809.png"));
         portadaAdd.setIcon(imagenPredeterminada);
@@ -1255,6 +1253,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jButtonGuardar.setEnabled(false);
 
                 JOptionPane.showMessageDialog(this, "El libro." + jTextFieldBiblioTitulo.getText() + " ha sido actualizado");
+
             } else {
                 // Si no se encuentra el libro
                 JOptionPane.showMessageDialog(this, "No se pudo encontrar el libro.");
@@ -1267,7 +1266,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //Comprobamos que el libro esta seleccionado
         String seleccionado = jListaBiblioteca.getSelectedValue();
         if (seleccionado != null) {
-            //Extraer el título y autor del libro seleccionado
+            //Extraer el título y autor del libro seleccionado oara pnerlo en la lista con el titulo y el autor
             String[] partes = seleccionado.split(" - ");
             String tituloSeleccionado = partes[0].trim();
             String autorSeleccionado = partes[1].trim();
@@ -1281,11 +1280,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 if (eliminado) {
                     // Eliminar el libro de la lista (JList)
                     DefaultListModel<String> modeloLibros = (DefaultListModel<String>) jListaBiblioteca.getModel();
-                    modeloLibros.removeElement(seleccionado); // Eliminar el libro de la lista de la interfaz
+                    modeloLibros.removeElement(seleccionado); //Quitar el libro de la lista si se elimina
 
                     JOptionPane.showMessageDialog(this, "Libro eliminado exitosamente.");
 
-                    //Limpiar
+                    //Limpiar los campos
                     jTextFieldBiblioTitulo.setText("");
                     jTextFieldBiblioAutor.setText("");
                     jTextFieldBiblioGenero.setText("");
@@ -1295,7 +1294,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     jTextAreaBiblioSinopsis.setText("");
                     jTextFieldBiblioFin.setText("");
 
-                    // Deshabilitar los campos y el botón de guardar después de eliminar
+                    //Deshabilitar los campos y el botón de guardar después de eliminar un libro
                     jTextFieldBiblioTitulo.setEnabled(false);
                     jTextFieldBiblioAutor.setEnabled(false);
                     jTextFieldBiblioGenero.setEnabled(false);
@@ -1305,8 +1304,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     jTextAreaBiblioSinopsis.setEnabled(false);
                     jTextFieldBiblioFin.setEnabled(false);
                     jButtonGuardar.setEnabled(false);
+
+                    //Actualizar el contador al eliminar un libro
+                    int contadorLibros = biblioteca.getContador();
+                    jLabelNumLibros.setText(contadorLibros + "");
+
+                    //Imagen predeterminada
+                    ImageIcon imagenPredeterminada = new ImageIcon(getClass().getResource("/images/book-heart.png"));
+                    portadaLibro.setIcon(imagenPredeterminada);
+                    this.imageFile = null;
+
                 } else {
-                    JOptionPane.showMessageDialog(this, "No se pudo eliminar el libro.");
+                    JOptionPane.showMessageDialog(this, "Se ha producido un error al eliminar el libro.");
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "Libro no encontrado.");

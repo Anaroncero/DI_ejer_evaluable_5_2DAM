@@ -22,7 +22,7 @@ public class Biblioteca {
 
     public void agregarLibro(Libro libro) { //recibe un objeto de tipo libro
         libros.add(libro); //se agrega al arrray
-        contador++; 
+        contador++;
 
     }
 
@@ -57,7 +57,10 @@ public class Biblioteca {
 }
     
     public boolean eliminarLibro(Libro libro) {
-    return libros.remove(libro); // Elimina el libro de la lista
+    contador--;
+    return libros.remove(libro); //Elimina un libro
+     
+   
 }
 
 }

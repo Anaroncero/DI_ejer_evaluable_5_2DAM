@@ -5,9 +5,11 @@ Ejercicio evaluable 2ºDAM</a>
 <hr>
 <p>
   Ejercicio_Evaluable_5: documentación, pruebas y distribución de aplicaciones. 
-  2º DAM Módulo: Desarrollo de Interfaces
-  Nota: 10
-  Profesor: Daniel Pérez Montañez
+  <ul>
+    <li>2º DAM Módulo: Desarrollo de Interfaces
+    <li>Nota: 10</li>
+    <li>Profesor: Daniel Pérez Montañez</li>
+  </ul>
 </p>
 
 =======

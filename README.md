@@ -27,6 +27,10 @@ Ejercicio evaluable 2ºDAM Desarrollo de interfaces</a>
 
 - Lucide-Icons
 
+## Plan de mejora
+
+- Añadirle una base de datos embebida (h2)
+
 ## 📃 License
 
 Este proyecto está bajo la [MIT License](LICENSE.md).

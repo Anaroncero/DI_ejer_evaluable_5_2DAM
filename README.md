@@ -1,4 +1,5 @@
-# Programa de escritorio para organizar y gestionar una colección de libros
+# Gestor de lectura
+<h2>Programa de escritorio para organizar y gestionar una colección de libros</h2>
 <p>
 Ejercicio evaluable 2ºDAM</a>
 </p>

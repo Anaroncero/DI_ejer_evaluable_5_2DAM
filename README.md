@@ -31,7 +31,7 @@ Ejercicio evaluable 2ºDAM</a>
 
 - Lucide-Icons
 
-## Plan de mejora
+## Plan de mejora (No era parte de la evaluación de este ejercicio)
 
 - Añadirle una base de datos embebida (h2)
 

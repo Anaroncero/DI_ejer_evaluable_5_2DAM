@@ -50,7 +50,8 @@ Desarrolla un programa de escritorio para organizar y gestionar una colección d
 
 - Lucide-Icons
 
-## Plan de mejora (No era parte de la evaluación de este ejercicio)
+## Plan de mejora
+(No era parte de la evaluación de este ejercicio)
 
 - Añadirle una base de datos embebida (h2)
 

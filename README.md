@@ -1,4 +1,4 @@
-# Ejercicio Evaluable: programa de escritorio para organizar y gestionar una colección de libros
+# Programa de escritorio para organizar y gestionar una colección de libros
 <p>
 Ejercicio evaluable 2ºDAM</a>
 </p>
